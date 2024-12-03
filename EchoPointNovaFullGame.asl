@@ -152,7 +152,8 @@ startup
 	settings.Add( "MiscSplits", true, " various bits", null);
 	//add custom settings
 	settings.Add( "final area", true, "final area rising", "MiscSplits");
-	settings.Add( "credits", true, "credits", "MiscSplits");
+	settings.Add( "credits_start", true, "credits start", "MiscSplits");
+	settings.Add( "credits_end", true, "credits end", "MiscSplits");
 
 	//add settings based on zone database
 	foreach (KeyValuePair<string, Tuple<string,int>> item in vars.zoneDictionary)
@@ -356,9 +357,15 @@ split
 		}
 	}
 	//split on credits start
-	if (settings["credits"])
+	if (settings["credits_start"])
 	{	
+
 		if(old.bIsRunningCredits == false && current.bIsRunningCredits == true) return true;
+	}		
+	//split on credits end
+	if (settings["credits_end"])
+	{	
+		if(old.bIsRunningCredits == true && current.bIsRunningCredits == false) return true;
 	}
 	//split on final climb animation start
 	if (settings["final area"])
