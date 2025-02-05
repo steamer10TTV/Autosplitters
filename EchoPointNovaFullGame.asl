@@ -149,7 +149,7 @@ startup
 	settings.Add( "ZoneSplits", false, "Zone Splits", null);
 	settings.Add( "ScanSplits", false, " Scan Endings", null);
 	settings.Add( "BossSplits", true, " Boss Endings", null);
-	settings.Add( "MiscSplits", true, " various bits", null);
+	settings.Add( "MiscSplits", true, " various bits (1.1.12 and below only)", null);
 	//add custom settings
 	settings.Add( "final area", true, "final area rising", "MiscSplits");
 	settings.Add( "credits_start", true, "credits start", "MiscSplits");
